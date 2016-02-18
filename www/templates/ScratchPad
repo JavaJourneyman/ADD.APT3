@@ -1,14 +1,10 @@
 ScratchPad
-Don't put any Condition Expression in Template.
-Do it at the Controller.
-Template:
-
-<input ng-click="check(profileForm.$valid)" name="submit" 
-       id="submit" value="Save" class="submit" type="submit">
-Controller:
-
-$scope.check = function(value) {
-    if (value) {
-       updateMyProfile();
-    }
-}
+<div class="list">
+            <div class="item range">
+              <i class="icon ion-ios7-sunny-outline"></i>
+              <input type="range" name="volume" min="0" max="5" value="{{slider.rangeValue}}" ng-model="slider.rangeValue">
+              <i class="icon ion-ios7-sunny"></i>
+            </div>
+             <div class="item item-divider">
+              Focus Level: {{slider.rangeValue}}
+            </div>

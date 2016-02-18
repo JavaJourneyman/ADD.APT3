@@ -7,17 +7,25 @@ angular.module('starter.controllers', [])
 .controller('FocusCtrl', function($scope) {
   $scope.focusPoints = 0;
   $scope.veryFocused = function(){
-    $scope.focusPoints = $scope.focusPoints + ;
+    $scope.focusPoints = $scope.focusPoints + 4;
+    document.getElementById("button2").style.visibility = "hidden";//Get element...
+    document.getElementById("button3").style.visibility = "hidden";//Get element...
+    document.getElementById("button4").style.visibility = "hidden";//Get element...
+    document.getElementById("button1").setAttribute("disabled","disabled");//Get element...
     alert("When you click Very Focused, you earn "+ $scope.focusPoints+ " points");
   }
-  //How do I create controllers to manage each of the buttons? As a group or individually?
-
-/*.controller('FocusCtrl', function($scope) {
-  $scope.focusPoints = 0;
   $scope.focused = function(){
-    $scope.focusPoints = $scope.focusPoints + 1;
+    $scope.focusPoints = $scope.focusPoints + 3;
+    document.getElementById("button1").style.visibility = "hidden";//Get element...
+    document.getElementById("button3").style.visibility = "hidden";//Get element...
+    document.getElementById("button4").style.visibility = "hidden";//Get element...
+    document.getElementById("button2").setAttribute("disabled","disabled");//Get element...
     alert("When you click Focused, you earn "+ $scope.focusPoints+ " points");
-  }*/
+
+    }//$scope.times///checks current time...if matches set time,
+    //then set all buttons properties to visible and enabled. Record the value of
+    //$scope.focusPoints for that time period on that day.
+    //http://www.w3schools.com/js/js_timing.asp
 
 })
 
@@ -36,16 +44,9 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller("ExampleController", function($scope) {
-    //New controller for the chart shold be moved.
-    $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
-    $scope.series = ['Series A', 'Series B'];
-    $scope.data = [
-        [65, 59, 80, 81, 56, 55, 40],
-        [28, 48, 40, 19, 86, 27, 90]
-    ];
- 
-});
+.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
+  $scope.chat = Chats.get($stateParams.chatId);
+/*})
 
 .controller('AccountCtrl', function($scope) {
   $scope.settings = {
