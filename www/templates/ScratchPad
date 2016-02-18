@@ -1,0 +1,14 @@
+ScratchPad
+Don't put any Condition Expression in Template.
+Do it at the Controller.
+Template:
+
+<input ng-click="check(profileForm.$valid)" name="submit" 
+       id="submit" value="Save" class="submit" type="submit">
+Controller:
+
+$scope.check = function(value) {
+    if (value) {
+       updateMyProfile();
+    }
+}
